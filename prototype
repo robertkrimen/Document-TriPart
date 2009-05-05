@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $cabinet = Document::TriPart::Cabinet->new( storage => a_dir )
+my $document = $cabinet->create
+$document->edit

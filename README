@@ -1,0 +1,69 @@
+NAME
+    Document::TriPart - Read, write & edit a tri-part document (preamble,
+    YAML::Tiny header, and body)
+
+VERSION
+    Version 0.020
+
+SYNOPSIS
+        my $document;
+        $document = Document::TriPart::->read( \<<_END_ ); # Or you can use ->read_string( ... )
+        # vim: #
+        ---
+        hello: world
+        ---
+        This is the body
+        _END_
+
+        $document->preamble   "# vim: #\n"
+        $document->header     { hello => world }
+        $document->body       "This is the body\n"
+
+DESCRIPTION
+    This distribution is meant to take the headache out of reading, writing,
+    and editing "interesting" documents. That is, documents with both
+    content and meta-data (via YAML::Tiny)
+
+    More documentation coming soon, check out the code and tests for usage
+    and examples. This is pretty beta, so the interface might change.
+
+AUTHOR
+    Robert Krimen, "<rkrimen at cpan.org>"
+
+BUGS
+    Please report any bugs or feature requests to "bug-document-tripart at
+    rt.cpan.org", or through the web interface at
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Document-TriPart>. I
+    will be notified, and then you'll automatically be notified of progress
+    on your bug as I make changes.
+
+SUPPORT
+    You can find documentation for this module with the perldoc command.
+
+        perldoc Document::TriPart
+
+    You can also look for information at:
+
+    *   RT: CPAN's request tracker
+
+        <http://rt.cpan.org/NoAuth/Bugs.html?Dist=Document-TriPart>
+
+    *   AnnoCPAN: Annotated CPAN documentation
+
+        <http://annocpan.org/dist/Document-TriPart>
+
+    *   CPAN Ratings
+
+        <http://cpanratings.perl.org/d/Document-TriPart>
+
+    *   Search CPAN
+
+        <http://search.cpan.org/dist/Document-TriPart/>
+
+ACKNOWLEDGEMENTS
+COPYRIGHT & LICENSE
+    Copyright 2009 Robert Krimen, all rights reserved.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
