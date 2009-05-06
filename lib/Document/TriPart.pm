@@ -235,7 +235,7 @@ sub read_file {
         while (1) {
             my ($more, $content);
             if (2 > @part) {
-                ($more, $content) = $self->_read_until_separator( $read, qr/^-{3}\s*$/ );
+                ($more, $content) = $self->_read_until_separator( $read );
             }
             else {
                 $content = $self->_read( $read );
@@ -247,6 +247,7 @@ sub read_file {
 
         my $body = pop @part;
         my $header = pop @part;
+
         my $preamble = pop @part;
 
         $self->_clear_header;
@@ -289,7 +290,11 @@ sub _parse_header {
     my $self = shift;
     my $content = shift;
 
-    return YAML::Tiny->read_string($$content)->[0];
+    # TODO Parsing of: { "a": "1" } does not work
+    chomp $$content if $$content =~ m/^\s*\{/;
+
+    return {} unless my $header = YAML::Tiny->read_string($$content);
+    return $header->[0];
 }
 
 sub _format_header {
@@ -297,6 +302,8 @@ sub _format_header {
     my $header = shift;
 
     return undef unless defined $header;
+
+    croak "Header given is not a hash ($header)" unless ref $header eq 'HASH';
 
     my $string = YAML::Tiny::Dump($header);
     $string =~ s/^---\s*//;

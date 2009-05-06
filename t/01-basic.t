@@ -12,6 +12,24 @@ use Document::TriPart;
 my ( $document, $file );
 
 $document = Document::TriPart->read( \<<_END_ );
+{}
+---
+_END_
+ok( $document );
+ok( $document->header );
+
+TODO: {
+    local $TODO = '...';
+    $document = Document::TriPart->read( \<<_END_ );
+{ a: 1 }
+---
+_END_
+    ok( $document );
+    ok( $document->header );
+    cmp_deeply( $document->header, { qw/a 1/ } );
+}
+
+$document = Document::TriPart->read( \<<_END_ );
 # vim: #
 ---
 hello: world
