@@ -1,3 +1,9 @@
+TODO:
+    - Allow for preheader... preamble is a special case of preheader: preheader(0)
+
+0.021 Thursday May 14 20:32:50 PDT 2009:
+    - It's File::AtomicWrite, not File::WriteAtomic (in Makefile.PL)
+
 0.020 Monday May 04 22:37:50 PDT 2009:
     - Adapted from Document::Stembolt
     - Better read/write handling

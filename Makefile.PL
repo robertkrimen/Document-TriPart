@@ -27,8 +27,8 @@ _END_
 
     map { my ($pk, $vr) = split m/\s/; requires $pk => $vr || 0 } grep { ! /^\s*#/ } split m/\n/, <<_END_;
 Carp::Clan
+File::AtomicWrite
 File::Temp
-File::WriteAtomic
 IO::Scalar
 Moose
 Path::Class
