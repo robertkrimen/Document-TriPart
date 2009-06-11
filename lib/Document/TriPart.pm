@@ -9,11 +9,11 @@ Document::TriPart - Read, write & edit a tri-part document (preamble, YAML::Tiny
 
 =head1 VERSION
 
-Version 0.021
+Version 0.022
 
 =cut
 
-our $VERSION = '0.021';
+our $VERSION = '0.022';
 
 =head1 SYNOPSIS
 
@@ -114,11 +114,11 @@ sub header {
 sub body {
     my $self = shift;
     if (@_) {
-        my $value;
+        my $value = shift;
         $value = "" unless defined $value;
         $value = $$value if ref $value eq "SCALAR";
         $value = \"$value";
-        $self->_body_content($value);
+        $self->_body_content( $value );
     }
     return "" unless defined $self->_body_content;
     return ${ $self->_body_content };
@@ -183,6 +183,7 @@ sub write_string {
     return join "\n$separator\n", @part, ( $self->body || '' );
 }
 
+# TODO ($header, $body) = ->parse( \ ... )
 sub read_string {
     return shift->read(\shift());
 }

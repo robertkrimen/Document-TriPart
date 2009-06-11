@@ -1,6 +1,9 @@
 TODO:
     - Allow for preheader... preamble is a special case of preheader: preheader(0)
 
+0.022 Wednesday June 10 17:28:13 PDT 2009:
+    - Fixed setting of the body
+
 0.021 Thursday May 14 20:32:50 PDT 2009:
     - It's File::AtomicWrite, not File::WriteAtomic (in Makefile.PL)
 
