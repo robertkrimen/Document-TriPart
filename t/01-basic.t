@@ -116,6 +116,11 @@ is( $document->preamble, "# vim: #\n" );
 cmp_deeply( $document->header, { qw/hello world/ } );
 cmp_deeply( $document->body, "This is the body\n" );
 
+$document = Document::TriPart->read( \<<_END_ );
+---
+_END_
+warning_is { $document->header } undef;
+
 #
 #
 #

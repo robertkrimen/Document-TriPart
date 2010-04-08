@@ -292,7 +292,7 @@ sub _parse_header {
     my $content = shift;
 
     # TODO Parsing of: { "a": "1" } does not work
-    chomp $$content if $$content =~ m/^\s*\{/;
+    chomp $$content if defined $$content && $$content =~ m/^\s*\{/;
 
     return {} unless my $header = YAML::Tiny->read_string($$content);
     return $header->[0];
