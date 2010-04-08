@@ -40,7 +40,7 @@ the interface might change.
 
 =cut
 
-use Moose;
+use Any::Moose;
 
 use File::AtomicWrite;
 use File::Temp qw/tempfile/;
