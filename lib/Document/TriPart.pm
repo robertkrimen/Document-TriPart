@@ -341,9 +341,10 @@ sub edit {
     unless (defined $file) {
         ($tmp_fh, $tmp_filename) = tempfile;
         $file = $tmp_filename;
-    }
 
-    $self->write( $file, @_ );
+        # Only write out the file first if we're using a temporary file
+        $self->write( $file, @_ );
+    }
 
     _edit_file $file;
 

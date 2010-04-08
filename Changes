@@ -1,5 +1,6 @@
 TODO:
     - Allow for preheader... preamble is a special case of preheader: preheader(0)
+    - Deal with empty header ({}) condition
 
 0.022 Wednesday June 10 17:28:13 PDT 2009:
     - Fixed setting of the body
