@@ -3,7 +3,7 @@ NAME
     YAML::Tiny header, and body)
 
 VERSION
-    version 0.023
+    version 0.024
 
 SYNOPSIS
         my $document;

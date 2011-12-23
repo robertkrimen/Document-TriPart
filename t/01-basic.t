@@ -5,8 +5,6 @@ use warnings;
 
 use Test::Most;
 
-plan qw/no_plan/;
-
 use Document::TriPart;
 
 my ( $document, $file );
@@ -121,10 +119,42 @@ $document = Document::TriPart->read( \<<_END_ );
 _END_
 warning_is { $document->header } undef;
 
-#
-#
-#
-#
-#
+{
+	local $Document::TriPart::TriPart = 0;
 
-1;
+	$document = Document::TriPart->read( \<<_END_ );
+hello: world
+---
+This is a body with '---'
+
+Just before ---
+
+---
+
+Just after ---
+
+Another --- for good measure
+---
+
+Last one
+---
+_END_
+}
+
+cmp_deeply( $document->body, <<_END_ );
+This is a body with '---'
+
+Just before ---
+
+---
+
+Just after ---
+
+Another --- for good measure
+---
+
+Last one
+---
+_END_
+
+done_testing;

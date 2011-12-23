@@ -39,6 +39,8 @@ use Carp::Clan;
 use Path::Class();
 use YAML::Tiny();
 
+our $TriPart = 1;
+
 has file => qw/is rw/;
 has atomic => qw/is rw/, default => 1;
 
@@ -223,9 +225,10 @@ sub read_file {
     }
     else {
         my @part;
+	my $part_limit = $TriPart ? 2 : 1;
         while (1) {
             my ($more, $content);
-            if (2 > @part) {
+            if ( $part_limit > @part ) {
                 ($more, $content) = $self->_read_until_separator( $read );
             }
             else {
