@@ -3,7 +3,7 @@ NAME
     YAML::Tiny header, and body)
 
 VERSION
-    Version 0.022
+    version 0.023
 
 SYNOPSIS
         my $document;
@@ -28,42 +28,11 @@ DESCRIPTION
     and examples. This is pretty beta, so the interface might change.
 
 AUTHOR
-    Robert Krimen, "<rkrimen at cpan.org>"
+    Robert Krimen <robertkrimen@gmail.com>
 
-BUGS
-    Please report any bugs or feature requests to "bug-document-tripart at
-    rt.cpan.org", or through the web interface at
-    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Document-TriPart>. I
-    will be notified, and then you'll automatically be notified of progress
-    on your bug as I make changes.
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by Robert Krimen.
 
-SUPPORT
-    You can find documentation for this module with the perldoc command.
-
-        perldoc Document::TriPart
-
-    You can also look for information at:
-
-    *   RT: CPAN's request tracker
-
-        <http://rt.cpan.org/NoAuth/Bugs.html?Dist=Document-TriPart>
-
-    *   AnnoCPAN: Annotated CPAN documentation
-
-        <http://annocpan.org/dist/Document-TriPart>
-
-    *   CPAN Ratings
-
-        <http://cpanratings.perl.org/d/Document-TriPart>
-
-    *   Search CPAN
-
-        <http://search.cpan.org/dist/Document-TriPart/>
-
-ACKNOWLEDGEMENTS
-COPYRIGHT & LICENSE
-    Copyright 2009 Robert Krimen, all rights reserved.
-
-    This program is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 
